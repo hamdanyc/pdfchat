@@ -2,11 +2,14 @@ import streamlit as st
 import requests
 import os
 
+# Set the chatPDF API key
+secretkey = os.environ.get("DCM_API_KEY")
+
 # Function to make the API request with a custom question
 def make_api_request(question):
     url = 'http://documind.onrender.com/api-ask-from-collection'
     files = {
-        'secretkey': (None, 'your_api_key'),
+        'secretkey': (None, secretkey),
         'question': (None, question),
         'folder_id': (None, 'a62cadb4-5b79-4090-8097-06d546a0f0d5'),
         'enable_gpt4': (None, 'false')
@@ -16,7 +19,7 @@ def make_api_request(question):
     return response.text
 
 # Streamlit app code
-st.title('Chat with Minutes of EXCO Meeting')
+st.title('Chat with RAFOC documents')
 
 # Add a text input for the user to enter the question
 user_question = st.text_input('Enter your query')
