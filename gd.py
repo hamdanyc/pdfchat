@@ -31,7 +31,7 @@ def convert_folder(folder_id):
         filename = file['name']
 
         if file['mimeType'] == 'application/vnd.google-apps.document':
-            output_filename = filename + '.docx'  # Assuming Google Doc format
+            output_filename = 'out/' + filename + '.docx'  # Assuming Google Doc format
             download_and_convert(file_id, output_filename)
         elif file['mimeType'] == 'application/vnd.google-apps.folder':
             convert_folder(file_id)  # Recursively process subfolders
