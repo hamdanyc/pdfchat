@@ -42,11 +42,11 @@ def authorize(client_id, client_secret):
     from google.oauth2 import service_account
     scope = ['https://www.googleapis.com/auth/drive']
     credentials = service_account.Credentials.from_service_account_file(
-        '/home/abi/nfs/Oaut_json', scopes=scope)
+        'oa.json', scopes=scope)
     return credentials
 
 # Folder ID(s) to process (replace with your folder IDs)
-folder_ids = ['FOLDER_ID_1', 'FOLDER_ID_2', ...]
+folder_ids = ['1U12-cRxw-g8cQkDc6CQUpS6HtOhTXoWF']
 
 for folder_id in folder_ids:
     convert_folder(folder_id)
