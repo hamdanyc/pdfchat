@@ -12,8 +12,7 @@ def make_api_request(question):
     data = {
         'secretkey': secretkey,
         'question': question,
-        'folder_id': 'a62cadb4-5b79-4090-8097-06d546a0f0d5',
-        'enable_gpt4': 'false'
+        'folder_id': 'a62cadb4-5b79-4090-8097-06d546a0f0d5'
     }
 
     response = requests.post(url, data=data)
